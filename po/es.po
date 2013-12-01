@@ -1,0 +1,363 @@
+# translation of PACKAGE.
+# Copyright (C) 2007 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# <>, 2007.
+# , fuzzy
+# 
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-06-07 01:13+0200\n"
+"PO-Revision-Date: 2008-06-07 01:14+0200\n"
+"Last-Translator:  <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#: ../supershow.py:118
+msgid "Converting audio"
+msgstr "Convirtiendo el sonido"
+
+#: ../supershow.py:130
+msgid "Slideshow sucessfully created"
+msgstr "Presentación creada correctamente"
+
+#: ../supershow.py:132
+msgid "Failed to create the SWF file"
+msgstr "Se produjo un error al crear el fichero SWF"
+
+#: ../supershow.py:134
+msgid "PDF2SWF failed. Try to use GhostScript as backend instead"
+msgstr "PDF2SWF falló. Pruebe a utilizar GhostScript en su lugar"
+
+#: ../supershow.py:137
+msgid "Canceled by the user"
+msgstr "Cancelado por el usuario"
+
+#: ../supershow.py:158
+msgid "Generating SWF"
+msgstr "Creando el fichero SWF"
+
+#: ../supershow.py:161
+msgid "Creating slides"
+msgstr "Creando diapositivas"
+
+#. there was an error
+#: ../supershow.py:424
+msgid "Failed to create slides from PDF with GS"
+msgstr "Se produjo un error al crear las diapositivas desde el PDF"
+
+#: ../supershow.py:426
+msgid "Aborted"
+msgstr "Cancelado"
+
+#: ../supershow.py:442
+msgid "Failed to create the output directory."
+msgstr "No se ha podido crear el directorio de salida."
+
+#: ../supershow.py:445
+msgid "Extracting slides from PDF"
+msgstr "Creando las diapositivas a partir del PDF"
+
+#: ../supershow.py:477
+msgid "PDF files"
+msgstr "Archivos PDF"
+
+#: ../supershow.py:480 ../supershow.py:492
+msgid "All files"
+msgstr "Todos los archivos"
+
+#: ../supershow.py:488
+msgid "Audio/video files"
+msgstr "Archivos de sonido/vídeo"
+
+#: ../supershow.py:677 ../supershow.py:679
+msgid "No file"
+msgstr "Ningun archivo"
+
+#: ../supershow.py:764 ../supershow.py:790
+msgid ""
+"There was a problem when playing the audio/video.\n"
+"Check that the file is playable with GStreamer."
+msgstr ""
+"Se produjo un error al reproducir el archivo de sonido/vídeo.\n"
+"Compruebe que dicho archivo es reproducible con GStreamer."
+
+#: ../supershow.py:860
+msgid "<b>No more slides</b>"
+msgstr "<b>No hay más diapositivas</b>"
+
+#: ../supershow.py:939
+msgid "<b>Video</b>"
+msgstr "<b>Vídeo</b>"
+
+#: ../supershow.py:970
+msgid "Error saving the file. Aborted."
+msgstr "Se produjo un error al grabar el archivo. Cancelado."
+
+#: ../supershow.py:1011
+msgid "No filename given. Aborted."
+msgstr "No se especificó un nombre de archivo. Cancelado."
+
+#: ../supershow.py:1017
+msgid "Error opening the file. Aborted."
+msgstr "Se produjo un error al abrir el archivo. Cancelado."
+
+#: ../supershow.py:1024
+msgid "The file isn't a valid SuperShow timing file. Aborted."
+msgstr "El archivo no es un archivo de tiempos de SuperShow válido. Cancelado."
+
+#: ../supershow.py:1051
+#, python-format
+msgid ""
+"Error in line %(linea)d.\n"
+"The file is corrupt. Aborted."
+msgstr ""
+"Error en la línea %(linea)d.\n"
+"El archivo está corrupto. Cancelado."
+
+#: ../supershow.py:1174
+msgid ""
+"Can't locate the following programs, needed to run SuperShow:\n"
+"\n"
+msgstr ""
+"No se han podido encontrar los siguientes programas, que son necesarios para "
+"ejecutar SuperShow:\n"
+"\n"
+
+#: ../supershow.glade.h:2
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#: ../supershow.glade.h:3
+msgid "0/0"
+msgstr "0/0"
+
+#: ../supershow.glade.h:4
+msgid "0:00:00"
+msgstr "0:00:00"
+
+#: ../supershow.glade.h:5
+msgid "<b>Audio delay</b>"
+msgstr "<b>Retardo de sonido</b>"
+
+#: ../supershow.glade.h:6
+msgid "<b>Buttons</b>"
+msgstr "<b>Botones</b>"
+
+#: ../supershow.glade.h:7
+msgid "<b>Current Slide</b>"
+msgstr "<b>Diapositiva actual</b>"
+
+#: ../supershow.glade.h:8
+msgid "<b>Current files:</b>"
+msgstr "<b>Archivos actuales:</b>"
+
+#: ../supershow.glade.h:9
+msgid "<b>JPEG quality</b>"
+msgstr "<b>Calidad de los JPEGs</b>"
+
+#: ../supershow.glade.h:10
+msgid "<b>No video</b>"
+msgstr "<b>Sin vídeo</b>"
+
+#: ../supershow.glade.h:11
+msgid "<b>Picture resolution</b>"
+msgstr "<b>Resolución de las imágenes</b>"
+
+#: ../supershow.glade.h:12
+msgid "<b>Slide conversion program</b>"
+msgstr "<b>Programa para convertir las diapositivas</b>"
+
+#: ../supershow.glade.h:13
+msgid "A presentation generator"
+msgstr "Generador de presentaciones"
+
+#: ../supershow.glade.h:14
+msgid "Add button for \"Play again\""
+msgstr "Añadir botón para \"Reproducir de nuevo\""
+
+#: ../supershow.glade.h:15
+msgid "Add control buttons (Play, Pause...)"
+msgstr "Añadir botones de control (Play, Pausa...)"
+
+#: ../supershow.glade.h:16
+msgid "Audio/Video: "
+msgstr "Sonido/Vídeo: "
+
+#: ../supershow.glade.h:17
+msgid "Choose the backend"
+msgstr "Escoja el backend"
+
+#: ../supershow.glade.h:18
+msgid "Close the current project and start a new one?"
+msgstr "¿Cerrar el proyecto actual y comenzar con uno nuevo?"
+
+#: ../supershow.glade.h:19
+msgid "Create slideshow"
+msgstr "Generar presentación"
+
+#: ../supershow.glade.h:20
+msgid "DPI"
+msgstr "PPP"
+
+#: ../supershow.glade.h:21
+msgid "Exit SuperShow?"
+msgstr "¿Salir de SuperShow?"
+
+#: ../supershow.glade.h:22
+msgid "Exit?"
+msgstr "¿Salir?"
+
+#: ../supershow.glade.h:23
+msgid "File with audio (and optional video): "
+msgstr "Fichero con el audio (y, opcionalmente, vídeo): "
+
+#: ../supershow.glade.h:24
+msgid "GhostScript"
+msgstr "GhostScript"
+
+#: ../supershow.glade.h:25
+msgid "Gives maximum quality, but can fail with very complex presentations."
+msgstr ""
+"Ofrece la máxima calidad, pero puede fallar con presentaciones muy complejas."
+
+#: ../supershow.glade.h:26
+msgid ""
+"Gives medium quality, but always work.\n"
+"Use it if PDF2SWF fails."
+msgstr ""
+"Da una calidad media, pero funciona siempre.\n"
+"Uselo si PDF2SWF falla."
+
+#: ../supershow.glade.h:28
+msgid "Hide control buttons while the slideshow is playing"
+msgstr "Ocultar los botones mientras se reproduce la presentación"
+
+#: ../supershow.glade.h:29
+msgid "Load files"
+msgstr "Cargar archivos"
+
+#: ../supershow.glade.h:30
+msgid "Load timeline"
+msgstr "Cargar tiempos"
+
+#: ../supershow.glade.h:31
+msgid "New project"
+msgstr "Nuevo proyecto"
+
+#: ../supershow.glade.h:32
+msgid "Next slide"
+msgstr "Siguiente diapositiva"
+
+#: ../supershow.glade.h:33
+msgid "Output directory: "
+msgstr "Directorio de salida:"
+
+#: ../supershow.glade.h:34
+msgid "Output file:"
+msgstr "Fichero de salida:"
+
+#: ../supershow.glade.h:35
+msgid "Overwrite timings?"
+msgstr "¿Sobreescribir los tiempos?"
+
+#: ../supershow.glade.h:36
+msgid "PDF with presentation: "
+msgstr "PDF con la presentación: "
+
+#: ../supershow.glade.h:37
+msgid "PDF2SWF"
+msgstr "PDF2SWF"
+
+#: ../supershow.glade.h:38
+msgid "Presentation: "
+msgstr "Presentación: "
+
+#: ../supershow.glade.h:39
+msgid "Save timeline"
+msgstr "Grabar tiempos"
+
+#: ../supershow.glade.h:40
+msgid "Slide: "
+msgstr "Diapositiva: "
+
+#: ../supershow.glade.h:41
+msgid "Sound position: "
+msgstr "Posición del sonido: "
+
+#: ../supershow.glade.h:42
+msgid ""
+"SuperShow is free software; you can redistribute it and/or modify it under "
+"the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 3 of the License, or (at your option) "
+"any later version.\n"
+"\n"
+"SuperShow is distributed in the hope that it will be useful, but WITHOUT ANY "
+"WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS "
+"FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more "
+"details.\n"
+"\n"
+"You should have received a copy of the GNU General Public License along with "
+"SuperShow; if not, write to the Free Software Foundation, Inc., 51 Franklin "
+"Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+
+#: ../supershow.glade.h:47
+msgid ""
+"You already have a set of timings in memory.\n"
+"Overwrite them?"
+msgstr ""
+"Ya hay una lista de tiempos en memoria.\n"
+"¿Sobreescribirla?"
+
+#: ../supershow.glade.h:49
+msgid "gtk-about"
+msgstr "gtk-about"
+
+#: ../supershow.glade.h:50
+msgid "gtk-cancel"
+msgstr "gtk-cancel"
+
+#: ../supershow.glade.h:51
+msgid "gtk-go-forward"
+msgstr "gtk-go-forward"
+
+#: ../supershow.glade.h:52
+msgid "gtk-no"
+msgstr "gtk-no"
+
+#: ../supershow.glade.h:53
+msgid "gtk-ok"
+msgstr "gtk-ok"
+
+#: ../supershow.glade.h:54
+msgid "gtk-yes"
+msgstr "gtk-yes"
+
+#: ../supershow.glade.h:55
+msgid "ms"
+msgstr "ms"
+
+#: ../supershow.glade.h:56
+msgid "© 2007-2008 Raster Software Vigo"
+msgstr "© 2007-2008 Raster Software Vigo"
+
+#~ msgid "Failed: Error while converting the PDF into SWF"
+#~ msgstr "Cancelado: se produjo un error al convertir el PDF en un SWF"
+
+#~ msgid "Adding sound"
+#~ msgstr "Añadiendo sonido"
+
+#~ msgid "Failed: Error while adding the sound"
+#~ msgstr "Cancelado: se produjo un error al añadir el sonido"
+
+#~ msgid "Video"
+#~ msgstr "Vídeo"
+
+#~ msgid "Error"
+#~ msgstr "Error"

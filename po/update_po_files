@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo es_ES
+intltool-update es
+echo fr_FR
+intltool-update fr
+echo gl_GL
+intltool-update gl

@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo es
+msgfmt es.po -o es.mo
+echo fr
+msgfmt fr.po -o fr.mo
+echo gl
+msgfmt gl.po -o gl.mo

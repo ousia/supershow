@@ -1,0 +1,264 @@
+<html>
+<head>
+<title>SuperShow</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body bgcolor="#E8E8F0">
+<p><div style="text-align: center;"><h1>SuperShow, a slideshow creator</h1></div></p>
+<p>Current version: 2.3b</p>
+
+<p><h2>What is it?</h2></p>
+<p>SuperShow is a program that allows you to create a slideshow (in Adobe Flash format) from a PDF and an
+audio file.</p>
+<p>Imagine this scenario: you do a conference with a set of slides created with <b>Impress</b>,
+<b>PowerPoint</b> or other tool. Someone (maybe you) recorded it as only audio, to make it
+available in the net. Unfortunately it lacks the slides, so people who download the audio will have
+to get them separately and try to imagine when to change to the next picture.</p>
+<p>With a video recording there's the problem that, usually, the slides are quite unreadable, unless high
+bitrates are used and the camera set near the screen.</p>
+<p>Here is where SuperShow comes. With it you can take your slides (exported to PDF) and your audio/video
+recording, and mix them in a single, small size, Adobe Flash file, which can be played from the net or
+downloaded to be seen locally. SuperShow allows you to easily sincronize the audio and the slide transitions
+and insulates you from the complexity of creating Flash files from Linux with SWFtools (ok, it's not so
+complex, but requires you to use the keyboard :) .</p>
+
+<p><h2>Installing SuperShow</h2></p>
+
+<p>Before installing SuperShow you must install the following packages:</p>
+<p>
+<ul>
+<li>GhostScript</li>
+<li>SWFtools</li>
+<li>Python</li>
+<li>PyGTK</li>
+<li>GSTreamer</li>
+<li>PyGST</li>
+</ul>
+</p>
+
+<p>If you can't find SWFtools in your package system, you can download the source code from:</p>
+
+<p><div style="text-align: center"><a href="http://www.swftools.org/">http://www.swftools.org/</a></div></p>
+
+<p>For Debian Etch user, there's a repository with an unoficial package. Just add this line to your /etc/apt/sources.lst</p>
+
+<p><div style="text-align: center">deb http://www.mediasitomo.com/debian-swftools/ unofficial main</div></p>
+
+<p>and install <b>swftools-nonfree</b>. If you know an Ubuntu repository with it, please contact me.</p>
+
+<p>Now you can use <b>sudo ./install.sh</b> in order to install it in your system. It will create an entry
+in your Gnome/KDE menu too. But if you don't have root privileges, you can still use SuperShow just launching
+it from the directory where you uncompressed it, just with <b>./supershow.py</b>.</p>
+
+<p>If you want to remove SuperShow, just use <b>sudo ./uninstall.sh</b>.</p>
+
+<p><h2>Using SuperShow</h2></p>
+<p>When you launch SuperShow, it will show the main window. Here is where you will do all the work.
+<p><div style="text-align: center"><img src="main_empty.png" /></div></p>
+<p>The first thing you have to do is start a new project. When you click the button, SuperShow will show
+the <b>File selection</b> window:</p>
+
+<p><div style="text-align: center"><img src="selectfile.png" /></div></p>
+
+<p>Here you can choose the files with the presentation itself (remember: exported as PDF) and the audio or
+video. The last one is played using GSTreamer, so it must be in a format that it understand. If you can
+play it with Totem, it will work in SuperShow.</p>
+<p>You have to choose the output directory and the filename you want for the output file too. SuperShow will
+create a folder in that output directory, to store some temporary files, and finally will create the
+final SWF file with the slideshow.</p>
+
+<p>After choosing all the files, folder and filename, SuperShow will pre-generate the slides to show
+during the sinchronization process, and finally will show again the main window, but now you have two
+new possible buttons to press: <b>Load timeline</b> and <b>Next slide</b>.</p>
+
+<p>To create the slideshow, you just have to press <b>Next slide</b> and SuperShow will start playing the
+audio (and possible video) and show the first slide.</p>
+
+<p><div style="text-align: center"><img src="main_full.png" /></div></p>
+
+<p>And now is easy: just click the <b>Next slide</b> button in the right moments to change to the next
+slide, and SuperShow will store the timeline. If the slides are too small, just maximize the window.</p>
+<p>When you reach the last slide, you must press the button once again to set the point where you want the
+sound to stop. This allows you to maintain the last slide as many time as you want (for example, if there's
+a part with questions after the presentation, and you want to maintain it).</p>
+<p>When you end, you will be able to save the timeline list with
+the <b>Save timeline</b> (to use them in a future using the <b>Load timeline</b> button), or create the
+presentation itself just by clicking in <b>Create slideshow</b>. If you use this last option, SuperShow
+will show the <b>Properties</b> dialog, where you will be able to choose the backend to transform the PDF
+to SWF:</p>
+
+<p><div style="text-align: center"><img src="properties.png" /></div></p>
+
+<p>The best backend is <b>PDF2SWF</b> because the final quality is perfect, but has a little drawback:
+it's limited to 65.535 elements. This means that it can fail with (very) complex presentations (PDFs with
+a lot of text, pictures...). In this case, you can choose <b>GhostScript</b>. This backend generates a
+JPEG with each slide, and paste them in the final SWF. It can manage very, very complex presentations,
+but the final quality is poor. The <b>Picture resolution</b> field allows you to choose the final size
+for the JPEGs (but be carefull: very big pictures can result in a sinchronization loss, due to the
+extra work needed to uncompress such big JPEG).</p>
+<p>The <b>JPEG quality</b> slider allows you to choose the quality for the pictures stored in the SWF
+(bigger quality means bigger filesize). The <b>Audio delay</b> value allows you to adjust the
+precise instant for the transitions in the case there's a delay: if the slides change too late, put a
+negative value (like -400), and if the change too soon, put a positive value (like 250).
+Remember that the value is in milliseconds (1 second = 1000 milliseconds).</p>
+
+<p>Finally, the checkbutton <b>Add control buttons (Play, Pause...)</b> allows to create slideshows without the
+control buttons. The <b>Hide control buttons while the slideshow is playing</b> makes the control buttons to
+slowly hide, allowing to fully watch the slides. Finally, the <b>Add button for "Play again"</b>, which allows
+to create slideshows without a button to play it again when it ends.</p>
+
+<p>After pressing the <b>Forward</b> button, SuperShow will generate the slideshow in the specified directory,
+and then will return to the main window (in case you want to save the timeline). If there's an error 
+(because the disk is full, or because the PDF is too complex) you can try again as many times as you need.</p>
+
+<p><div style="text-align: center"><img src="example.png" /></div></p>
+<p>This is a presentation running in Firefox. At bottom left you can see the menu to rewind 5 seconds, jump to
+the previous slide, play/pause, jump to the next slide, and forward 5 seconds. At bottom center is the slide
+counter, and at bottom right is the time counter. This menu is shown when the
+mouse cursor is moved to the bottom part of the presentation, and hides itself when the mouse cursor leaves
+it.</p>
+
+<p><h2>File format for timeline</h2></p>
+
+<p>The files with the timelines are very simple, and are human-readable, so is possible to fine-tune them if
+needed, or even create them directly with a text editor.</p>
+
+<p>The filename must end in <b>.supershow</b>, or SuperShow won't show it in the file list.</p>
+
+<p>The first line must contain the string <b>supershow</b>, to identify the file and ensure it's a valid
+timeline file.</p>
+<p>Next comes one or more lines with commands. Currently only two commands are recognized:</p>
+<ul>
+<li><b>time:</b> this command is followed by the time instant to change to the next slide. The time
+must be expresed in milliseconds (1 second = 1000 milliseconds). Timings are always absolute, to avoid
+acumulative errors.</li>
+<li><b>offset:</b> this command is followed by a time offset, expresed in milliseconds. SuperShow will add
+this quantity to all the following <b>time:</b> commands, until a new <b>offset:</b> command is found. Is
+usefull to fix audio delays.</li>
+</ul>
+
+<p><h2>File format for ActionScript template</h2></p>
+
+<p>The template with the ActionScript code is stored at <b>/usr/local/share/supershow/script.base</b> or at
+<b>/usr/share/supershow/script.base</b>. It's a pure ActionScript code, except for the fact that SuperShow
+parses it to replace some tags with specific data. The tags has this format:</p>
+<p align="center">{PREFIX:SUFIX}</p>
+<p>The PREFIX part contains the tag type, and the SUFIX part contains the subtype. These are the currently
+recognized tags:</p>
+<ul>
+<li><b>{filename:out}</b> is replaced with the output path and filename for the SWF file.</li>
+<li><b>{filename:slides}</b> is replaced with the complete path where the slides are stored in SWF format.</li>
+<li><b>{filename:audio}</b> is replaced with the complete path to the audio track in WAV format.</li>
+<li><b>{filename:basepath}</b> is replaced with the output path and generic filename chosen by the user.</li>
+<li><b>{filename:installpath}</b> is replaced with supershow's installation path, which can be <b>/usr/share/supershow/</b>
+or <b>/usr/local/share/supershow/</b> (ended in slash). Useful to add files like the TrueType font for counters.</li>
+<li><b>{maxtime:VAR}</b> is replaced by a sentence in the form <i>VAR=XXX;</i>, being XXX the number of slides in
+the slideshow.</li>
+<li><b>{timelist:VAR}</b> is replaced by a list of array definitions in the form <i>VAR[X]=YYY;</i> being
+X a slide number and YYY the time instant when it must be shown.</li>
+<li><b>{var:addbuttons}</b> is replaced by 1 if the user wanted to add a menu with Play, Pause, Forward... buttons,
+or 0 if the user wanted a slideshow without them.</li>
+<li><b>{var:autohidebuttons}</b> is replaced by 1 if the user wants the menu to be shown only when the mouse
+cursor is in the bottom part of the slideshow, or by 0 if he/she wants it to be always visible.</li>
+<li><b>{var:playagain}</b> is replaced by 1 if the user wants a button to play again the slideshow when it
+ends, or by 0 if the user doesn't want it.</li>
+<li><b>{var:XXXXX}</b> every unrecognized VAR tag will be replaced by 0.</li>
+</ul>
+
+<p>The tags can't contain into them blank spaces, carriage returns or semicolons, to avoid being confused
+with code blocks.</p>
+
+<p><h2>Command-line utility</h2></p>
+
+<p>Is possible to use the utility <b>supershow-converter</b> to import or export between this format and
+a simple list of times in format hour:minute:second.millisecond. This way, if you have a list like this one:</p>
+<p>
+0:0:8.12<br/>
+0:0:45.3<br/>
+0:1:2.018<br/>
+...
+</p>
+<p>You can convert it to the format used in SuperShow with the command:</p>
+<p align="center"><b>supershow-converter import input-file output-file</b></p>
+
+<p>And you can reverse the conversion just using <b>export</b> instead of <b>import</b>.</p>
+
+<!-- <p>It's possible to import timelines from <b>Audacity</b> too, just using the <b>audacity2supershow</b> utility
+created by Ralph Zajac:</p>
+<p align="center"><b>audacity2supershow input-filename</b></p>
+<p>It will create a new file named <b>input-filename.supershow</b> with the timeline.</p> -->
+
+<p><h2>FAQ</h2></p>
+
+<ul>
+<li><b>The menu in the slideshows dissappears.</b><p>Just put the mouse cursor in the lower part
+of the slideshow and the menu will pop-up.</p></li>
+</ul>
+
+<p><h2>History of versions</h2></p>
+
+<p><b>Version 2.3b</b></p>
+<ul>
+<li>Translated all the variables in the base script</li>
+</ul>
+
+<p><b>Version 2.3</b></p>
+<ul>
+<li>Unpauses when the user clicks on <b>Forward</b>, <b>Backward</b>, <b>+5</b> or <b>-5</b> buttons
+ (thanks to Pablo Rodríguez).</li>
+<li>When paused, the buttons remain (thanks to Pablo Rodríguez).</li>
+<!-- <li>Added an external utility to import timelines from Audacity (thanks to Ralph Zajac)</li> -->
+<li>Added template support to simplify the enhacement of the ActionScript code.</li>
+<li>Allows to put or remove the control buttons, and let them fixed over the slideshow.</li>
+<li>Allows to put or remove the <i>Play again</i> button.</li>
+<li>During creation shows the current and total slide number.</li>
+<li>During reproduction shows the current and total slide number, and a time counter
+(thanks to Pablo Rodríguez).</li>
+</ul>
+
+<p><b>Version 2.2</b></p>
+
+<ul>
+<li>Added vectorial buttons (thanks to Pablo Rodríguez)</li>
+<li>New icon (thanks to Pablo Rodríguez)</li>
+<li>Added new buttons to jump to the next/previous slide (thanks to Pablo Rodríguez)</li>
+<li>Fixed a bug when replaying a presentation</li>
+</ul>
+
+<p><b>Version 2.1</b></p>
+
+<ul>
+<li>When the user resizes the main window, the slides resizes too.</li>
+<li>While creating the slideshow, now SuperShow stops the sound when the user passes the last slide.</li>
+<li>Now the slideshow ends at the end of the sound if, during creation, there were slides left.</li>
+</ul>
+
+<p><b>Version 2.0</b></p>
+
+<ul>
+<li>Better precission in the timings. Now the slide changes exactly where the user wanted, and not
+aproximately.</li>
+<li>Allows to save and load the timeline.</li>
+<li>Added three buttons in the presentations to allow the user to pause/resume, rewind and fast forward them.</li>
+<li>Added a button to play again the presentation when it ends.</li>
+<li>Compatible with Gnash (see FAQ).</li>
+<li>Flash code is much cleaner now.</li>
+<li>The interface is cleaner and more consistent with classic applications.</li>
+<li>Code refactored. Now is cleaner.</li>
+</ul>
+
+<p><b>Version 1.0.1</b></p>
+<ul>
+<li>Added french translation.</li>
+<li>Now the window with the "Slideshow sucessfully created" message doesn't show "Error" as title.</li>
+</ul>
+
+<p><b>Version 1.0</b></p>
+<ul>
+<li>First public version</li>
+</ul>
+<p><h2>Contacting the author</h2></p>
+<p>This program has been created by Sergio Costas (Raster Software Vigo).<br />
+http://www.rastersoft.com <br />
+<b>e-mail</b>: raster@rastersoft.com</p>
+</html>

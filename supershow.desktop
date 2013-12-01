@@ -1,0 +1,14 @@
+[Desktop Entry]
+X-MultipleArgs=false
+Type=Application
+Name=SuperShow
+GenericName=SlideShow creator
+GenericName[es]=Creador de presentaciones
+GenericName[gl]=Creador de presentacións
+Comment=Allows to create slideshows from PDF and audio files
+Comment[es]=Permite crear presentaciones a partir de un fichero PDF y otro de sonido
+Comment[gl]=Permite crear presentacións a partires dun arquivo PDF e outro de son
+TryExec=supershow
+Exec=supershow
+Categories=AudioVideo;
+Icon=supershow
